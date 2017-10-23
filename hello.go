@@ -8,6 +8,7 @@ import (
 
 	"cloud.google.com/go/datastore"
 	"github.com/gorilla/mux"
+	"google.golang.org/appengine"
 )
 
 type Entity struct {
@@ -88,4 +89,5 @@ func main() {
 	r.HandleFunc("/", defaultHandler)
 	r.HandleFunc("/save", saveHandler)
 	r.HandleFunc("retrieve", retrieveHandler)
+	appengine.Main()
 }
